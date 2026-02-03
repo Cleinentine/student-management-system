@@ -9,7 +9,7 @@ class Section extends Model
     protected $fillable = [
         'college_id',
         'section_number',
-        'section_alphabet'
+        'section_alphabet',
     ];
 
     public function college()

@@ -22,7 +22,7 @@ class User extends Authenticatable
         'mobile_number',
         'password',
         'role',
-        'status'
+        'status',
     ];
 
     /**
@@ -34,7 +34,7 @@ class User extends Authenticatable
         'password',
         'remember_token',
         'role',
-        'status'
+        'status',
     ];
 
     /**

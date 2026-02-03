@@ -10,7 +10,7 @@ class Grade extends Model
         'assessment_id',
         'student_id',
         'score',
-        'remarks'
+        'remarks',
     ];
 
     public function assessment()

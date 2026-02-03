@@ -10,7 +10,7 @@ class Thesis extends Model
         'student_id',
         'title',
         'summary',
-        'thesis'
+        'thesis',
     ];
 
     public function students()

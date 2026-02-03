@@ -6,6 +6,7 @@
 @source '../**/*.js';
 
 @theme {
+    --color-maroon: #800000;
     --font-montserrat: "Montserrat", sans-serif;
     --font-nunito: "Nunito", sans-serif;
     --font-sans:

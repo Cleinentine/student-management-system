@@ -8,6 +8,6 @@ class Semester extends Model
 {
     protected $fillable = [
         'phase',
-        'school_year'
+        'school_year',
     ];
 }

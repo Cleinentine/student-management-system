@@ -10,7 +10,7 @@ class Subject extends Model
         'college_id',
         'code',
         'title',
-        'unit'
+        'unit',
     ];
 
     public function assessments()

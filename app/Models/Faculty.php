@@ -10,7 +10,7 @@ class Faculty extends Model
         'dean_id',
         'user_id',
         'name',
-        'avatar'
+        'avatar',
     ];
 
     public function assessments()

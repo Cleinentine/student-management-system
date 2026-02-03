@@ -8,7 +8,7 @@ class College extends Model
 {
     public $timestamps = false;
 
-    protected $fillable = ['id', 'name'];
+    protected $fillable = ['id', 'logo', 'name'];
 
     public function dean()
     {

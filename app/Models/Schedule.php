@@ -12,7 +12,7 @@ class Schedule extends Model
         'start_time',
         'end_time',
         'start_day',
-        'end_day'
+        'end_day',
     ];
 
     public function faculties()

@@ -12,11 +12,15 @@
 
         @vite('resources/js/app.js')
         @inertiaHead
+        @routes
     </head>
 
     <body class="font-nunito">
         @inertia
 
+        <div id="fb-root"></div>
+
         <script src="https://kit.fontawesome.com/9fa37eff98.js" crossorigin="anonymous"></script>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v24.0&appId=1140187344090566"></script>
     </body>
 </html>

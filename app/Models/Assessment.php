@@ -14,7 +14,7 @@ class Assessment extends Model
         'material',
         'deadline',
         'status',
-        'type'
+        'type',
     ];
 
     public function faculties()

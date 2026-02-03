@@ -17,7 +17,7 @@ class Student extends Model
         'gender',
         'date_of_birth',
         'home_address',
-        'avatar'
+        'avatar',
     ];
 
     public function attendances()

@@ -14,7 +14,7 @@ class Attendance extends Model
         'time_out',
         'time_out_location',
         'remarks',
-        'type'
+        'type',
     ];
 
     public function faculties()

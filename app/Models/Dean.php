@@ -10,7 +10,7 @@ class Dean extends Model
         'college_id',
         'user_id',
         'name',
-        'avatar'
+        'avatar',
     ];
 
     public function college()

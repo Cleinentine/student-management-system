@@ -8,7 +8,7 @@ class HandledSubject extends Model
 {
     protected $fillable = [
         'faculty_id',
-        'subject_id'
+        'subject_id',
     ];
 
     public function faculties()
