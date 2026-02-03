@@ -55,17 +55,13 @@ onMounted(() => {
             </article>
 
             <video
-                autoplay
+                autoPlay
                 muted
                 loop
-                class="absolute h-full left-0 object-cover top-0 w-full"
-                ref="video"
+                className="absolute top-0 left-0 h-screen w-full object-cover"
             >
-                <source
-                    class="absolute h-screen w-full"
-                    :src="'/videos/csua-tour.mp4'"
-                    type="video/mp4"
-                />
+                <source :src="'/videos/csua-tour.mp4'" type="video/mp4" />
+                Your browser does not support the video tag.
             </video>
 
             <button
@@ -133,7 +129,10 @@ onMounted(() => {
             </article>
         </section>
 
-        <section class="max-w-screen-2xl mx-auto px-5 py-20 text-center">
+        <section
+            class="max-w-screen-2xl mx-auto px-5 py-20 text-center"
+            id="colleges"
+        >
             <HeadingComponent text="College Campuses" />
 
             <article class="gap-5 grid md:grid-cols-2 lg:grid-cols-4">
@@ -153,6 +152,7 @@ onMounted(() => {
 
         <section
             class="bg-[url(/images/marble.jpg)] bg-center bg-cover bg-no-repeat px-5 py-20 text-center text-white md:text-left"
+            id="programs"
         >
             <article class="max-w-screen-2xl mx-auto">
                 <HeadingComponent text="Courses Offered" />
@@ -192,29 +192,29 @@ onMounted(() => {
         <section
             class="bg-[url(/images/alumni-tracer.png)] bg-center bg-cover bg-no-repeat text-white md:text-left"
         >
-            <article class="bg-black/70 px-5 py-20 relative text-center">
-                <HeadingComponent text="CSU-A ALUMNI REPOSITORY" />
+            <article class="bg-black/70 px-5 py-20 text-center">
+                <HeadingComponent text="CSU-A Alumni Repository" />
 
                 <p
-                    class="leading-8 max-w-screen-2xl mx-auto text-lg tracking-wide w-[95%] md:w-[80%] lg:w-1/2"
+                    className="text-lg tracking-wide w-[95%] md:w-1/2 mx-auto my-5"
                 >
-                    Stay connected with the Cagayan State University – Aparri
-                    Alumni System! Our platform lets you easily update your
-                    career journey through the Alumni Tracer, find and connect
-                    with fellow graduates via the Alumni Directory, and explore
-                    insights on alumni trends with our Decision Support System.
-                    Whether you want to network, share achievements, or keep up
-                    with the university community, CSU Aparri’s alumni portal
-                    keeps you linked to your roots and your future—all in one
-                    place.
+                    Stay connected with the Cagayan State University Aparri
+                    Alumni System! Our platform lets you update your career
+                    journey through the Alumni Directory, find and connect with
+                    fellow graduates, and get insights on alumni trends with our
+                    Decision Support System. Whether you want to network, share
+                    achievements, or stay linked with the university community,
+                    CSU Aparri’s alumni platform keeps you connected to your
+                    roots and your future.
                 </p>
 
                 <button
-                    class="border-5 border-white duration-500 font-black font-montserrat hover:bg-white hover:text-black inline-block mt-10 px-7 py-3"
+                    className="border-2 border-white duration-500 font-black font-montserrat hover:bg-white hover:text-black inline-block px-6 py-3 mt-5"
                 >
                     VISIT WEBSITE
-
-                    <span><i class="fa-solid fa-right-to-bracket"></i></span>
+                    <span
+                        ><i className="fa-solid fa-right-to-bracket ml-2"></i
+                    ></span>
                 </button>
             </article>
         </section>

@@ -1,11 +1,22 @@
 <script setup>
+import { ref } from "vue";
+
 import HeadingComponent from "../Components/HeadingComponent.vue";
+import NavigationComponent from "../Components/NavigationComponent.vue";
 import SubHeadingComponent from "../Components/SubHeadingComponent.vue";
+
+const isVisible = ref(false);
+
+const toggleNavigation = () => {
+    isVisible.value = !isVisible.value;
+
+    document.body.classList.toggle("overflow-hidden");
+};
 </script>
 
 <template>
-    <header class="fixed grid grid-cols-2 p-5 w-full z-40">
-        <section>
+    <header>
+        <section class="fixed left-5 top-5 z-50">
             <Link class="inline-block outline-none" :href="route('home')">
                 <img
                     alt="CSU Logo"
@@ -15,20 +26,36 @@ import SubHeadingComponent from "../Components/SubHeadingComponent.vue";
             </Link>
         </section>
 
-        <section class="text-right">
-            <div class="bg-black cursor-pointer inline-block p-4">
-                <div class="bg-white h-[0.180rem] w-8"></div>
-                <div class="bg-white h-[0.180rem] my-1.5 w-8"></div>
-                <div class="bg-white h-[0.180rem] w-8"></div>
+        <section class="fixed right-5 top-5 z-50">
+            <div
+                class="bg-black cursor-pointer inline-block p-4"
+                :class="{ open: isVisible }"
+                @click="toggleNavigation"
+            >
+                <div
+                    class="bg-white duration-500 h-[0.180rem] relative w-8"
+                    id="burgerTop"
+                ></div>
+                <div
+                    class="bg-white duration-500 h-[0.180rem] my-1.5 w-8"
+                    id="burgerMiddle"
+                ></div>
+                <div
+                    class="bg-white duration-500 h-[0.180rem] relative w-8"
+                    id="burgerBottom"
+                ></div>
             </div>
         </section>
     </header>
+
+    <NavigationComponent :is-visible="isVisible" />
 
     <main class="relative">
         <slot />
 
         <section
             class="bg-[url(/images/monument.jpg)] bg-center bg-cover bg-no-repeat text-white uppercase md:text-left"
+            id="contact"
         >
             <article
                 class="bg-black/90 font-black font-montserrat px-5 py-20 relative"
@@ -135,8 +162,29 @@ import SubHeadingComponent from "../Components/SubHeadingComponent.vue";
             </article>
         </footer>
 
-        <footer class="bg-black font-bold p-3 text-center text-sm text-white">
+        <footer class="bg-black font-thin p-3 text-center text-sm text-white">
             <p>&copy; Copyright 2026. All Rights Reserved</p>
         </footer>
     </main>
 </template>
+
+<style scoped>
+#burgerTop,
+#burgerMiddle,
+#burgerBottom {
+    transition: all 0.5s ease;
+    transform-origin: center;
+}
+
+.open #burgerTop {
+    transform: rotate(45deg) translateY(0.875rem);
+}
+
+.open #burgerMiddle {
+    opacity: 0;
+}
+
+.open #burgerBottom {
+    transform: rotate(-45deg) translateY(-0.8rem);
+}
+</style>
