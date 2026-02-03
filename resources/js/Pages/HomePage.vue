@@ -56,9 +56,10 @@ onMounted(() => {
 
             <video
                 autoPlay
-                muted
-                loop
                 className="absolute top-0 left-0 h-screen w-full object-cover"
+                loop
+                muted
+                ref="video"
             >
                 <source :src="'/videos/csua-tour.mp4'" type="video/mp4" />
                 Your browser does not support the video tag.
