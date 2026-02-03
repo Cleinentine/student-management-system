@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from "vue";
 
+import { Link } from "@inertiajs/vue3";
+
 import HeadingComponent from "../Components/HeadingComponent.vue";
 import NavigationComponent from "../Components/NavigationComponent.vue";
 import SubHeadingComponent from "../Components/SubHeadingComponent.vue";
@@ -23,6 +25,16 @@ const toggleNavigation = () => {
                     class="w-20"
                     :src="'/images/icons/logo.png'"
                 />
+            </Link>
+        </section>
+
+        <section class="fixed right-25 top-5 z-50" v-if="$page.props.auth.user">
+            <Link
+                class="bg-black cursor-pointer duration-500 px-3 py-2 text-3xl text-white"
+                href="/logout"
+                method="post"
+            >
+                <span><i class="fa-solid fa-right-from-bracket"></i></span>
             </Link>
         </section>
 
@@ -74,9 +86,9 @@ const toggleNavigation = () => {
                             </h3>
                         </div>
 
-                        <div>
+                        <div class="lg:text-right">
                             <a
-                                class="border-5 border-white duration-500 font-black font-montserrat hover:bg-white hover:text-black mr-5 px-7 py-3"
+                                class="border-5 border-white duration-500 font-black font-montserrat hover:bg-white hover:text-black inline-block mb-5 mr-5 px-7 py-3 md:mb-0"
                                 href="mailto:csuaparri@csu.edu.ph"
                             >
                                 SEND US AN EMAIL
@@ -86,7 +98,7 @@ const toggleNavigation = () => {
                             </a>
 
                             <a
-                                class="border-5 border-white duration-500 font-black font-montserrat hover:bg-white hover:text-black px-7 py-3"
+                                class="border-5 border-white duration-500 font-black font-montserrat hover:bg-white hover:text-black inline-block px-7 py-3"
                                 href="tel:(078)8880786"
                             >
                                 GIVE US A CALL
@@ -100,11 +112,11 @@ const toggleNavigation = () => {
             </article>
         </section>
 
-        <footer class="bg-black/90 text-white">
+        <section class="bg-black/90 text-center text-white lg:text-left">
             <article class="max-w-screen-2xl mx-auto px-5 py-20">
                 <HeadingComponent text="Socials" />
 
-                <div class="gap-5 grid lg:grid-cols-2 lg:text-center">
+                <div class="gap-5 grid text-center lg:grid-cols-2">
                     <div>
                         <SubHeadingComponent text="Campus Student Council" />
 
@@ -160,7 +172,7 @@ const toggleNavigation = () => {
                     </div>
                 </div>
             </article>
-        </footer>
+        </section>
 
         <footer class="bg-black font-thin p-3 text-center text-sm text-white">
             <p>&copy; Copyright 2026. All Rights Reserved</p>

@@ -55,11 +55,11 @@ const authLinks = [
 const guestLinks = [
     {
         name: "Login",
-        route: "home",
+        route: "login",
     },
     {
         name: "Register",
-        route: "home",
+        route: "register",
     },
     {
         name: "Forgot Password",

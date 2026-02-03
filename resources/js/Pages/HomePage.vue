@@ -56,7 +56,7 @@ onMounted(() => {
 
             <video
                 autoPlay
-                className="absolute top-0 left-0 h-screen w-full object-cover"
+                class="absolute top-0 left-0 h-screen w-full object-cover"
                 loop
                 muted
                 ref="video"
@@ -196,9 +196,7 @@ onMounted(() => {
             <article class="bg-black/70 px-5 py-20 text-center">
                 <HeadingComponent text="CSU-A Alumni Repository" />
 
-                <p
-                    className="text-lg tracking-wide w-[95%] md:w-1/2 mx-auto my-5"
-                >
+                <p class="text-lg tracking-wide w-[95%] mx-auto mb-10 lg:w-1/2">
                     Stay connected with the Cagayan State University Aparri
                     Alumni System! Our platform lets you update your career
                     journey through the Alumni Directory, find and connect with
@@ -210,11 +208,11 @@ onMounted(() => {
                 </p>
 
                 <button
-                    className="border-2 border-white duration-500 font-black font-montserrat hover:bg-white hover:text-black inline-block px-6 py-3 mt-5"
+                    class="border-5 border-white duration-500 font-black font-montserrat hover:bg-white hover:text-black px-7 py-3"
                 >
                     VISIT WEBSITE
                     <span
-                        ><i className="fa-solid fa-right-to-bracket ml-2"></i
+                        ><i class="fa-solid fa-right-to-bracket ml-2"></i
                     ></span>
                 </button>
             </article>

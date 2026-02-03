@@ -1,3 +1,10 @@
-<script setup></script>
+<script setup>
+defineProps({
+    text: String,
+    towards: String,
+});
+</script>
 
-<template>Label</template>
+<template>
+    <label :for="towards" class="cursor-text text-lg">{{ text }}:</label>
+</template>
