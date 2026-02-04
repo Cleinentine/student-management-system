@@ -4,6 +4,7 @@ defineProps({
     name: String,
     placeholder: String,
     type: String,
+    value: String,
 });
 </script>
 
@@ -12,6 +13,7 @@ defineProps({
         <input
             autocomplete="on"
             class="bg-slate-900 border-4 border-slate-600 outline-none pl-11.25 placeholder:italic px-7 py-4 rounded-lg text-white w-full"
+            :defaultValue="value"
             :id="name"
             :name="name"
             :placeholder="placeholder"

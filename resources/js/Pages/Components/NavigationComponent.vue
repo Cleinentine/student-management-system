@@ -36,7 +36,7 @@ const mainLinks = [
 const authLinks = [
     {
         name: "My Profile",
-        route: "home",
+        route: "profile",
     },
     {
         name: "My Schedule",
@@ -49,6 +49,10 @@ const authLinks = [
     {
         name: "My Attendance",
         route: "home",
+    },
+    {
+        name: "My Account",
+        route: "account",
     },
 ];
 
