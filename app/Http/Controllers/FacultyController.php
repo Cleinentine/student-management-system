@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Faculty;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class FacultyController extends Controller
 {
@@ -12,7 +13,7 @@ class FacultyController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('FacultiesPage');
     }
 
     /**

@@ -50,9 +50,9 @@ class User extends Authenticatable
         ];
     }
 
-    public function deans()
+    public function dean()
     {
-        return $this->hasMany(Dean::class);
+        return $this->hasOne(Dean::class);
     }
 
     public function faculties()
