@@ -51,7 +51,9 @@ class UserController extends Controller
             'role' => 'Student',
         ]);
 
-        return redirect()->route('login');
+        return redirect()
+            ->route('login')
+            ->with('success', 'Account successfully created!');
     }
 
     /**

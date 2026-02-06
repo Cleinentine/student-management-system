@@ -82,8 +82,9 @@ onMounted(() => {
 
                 <div class="grid md:grid-cols-2">
                     <div>
-                        <button
+                        <a
                             class="border-5 border-white duration-500 font-black font-montserrat hover:bg-white hover:text-black px-7 py-3"
+                            :href="route('register')"
                         >
                             JOIN US
 
@@ -92,7 +93,7 @@ onMounted(() => {
                                     class="fa-solid fa-arrow-right-to-bracket"
                                 ></i>
                             </span>
-                        </button>
+                        </a>
                     </div>
 
                     <div class="mt-20 md:mt-0">
@@ -196,7 +197,9 @@ onMounted(() => {
             <article class="bg-black/70 px-5 py-20 text-center">
                 <HeadingComponent text="CSU-A Alumni Repository" />
 
-                <p class="text-lg tracking-wide w-[95%] mx-auto mb-10 lg:w-1/2">
+                <p
+                    class="text-lg tracking-wide w-[95%] max-w-screen-2xl mx-auto mb-10 lg:w-1/2"
+                >
                     Stay connected with the Cagayan State University Aparri
                     Alumni System! Our platform lets you update your career
                     journey through the Alumni Directory, find and connect with
@@ -207,14 +210,16 @@ onMounted(() => {
                     roots and your future.
                 </p>
 
-                <button
+                <a
                     class="border-5 border-white duration-500 font-black font-montserrat hover:bg-white hover:text-black px-7 py-3"
+                    href="https://pornhub.com/"
+                    target="_blank"
                 >
                     VISIT WEBSITE
                     <span
                         ><i class="fa-solid fa-right-to-bracket ml-2"></i
                     ></span>
-                </button>
+                </a>
             </article>
         </section>
     </MainLayout>

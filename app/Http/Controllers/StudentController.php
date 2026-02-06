@@ -26,7 +26,7 @@ class StudentController extends Controller
         $student = Student::where('user_id', Auth::user()->id)
             ->first();
 
-        return Inertia::render('ProfilePage', ['programs' => $programs, 'student' => $student]);
+        return Inertia::render('StudentPage', ['programs' => $programs, 'student' => $student]);
     }
 
     /**

@@ -4,9 +4,10 @@ import { computed, onMounted, ref } from "vue";
 import { Form, usePage } from "@inertiajs/vue3";
 
 import ButtonComponent from "./Components/ButtonComponent.vue";
+import ContentHeaderComponent from "./Components/ContentHeaderComponent.vue";
+import ContentContainerComponent from "./Components/ContentContainerComponent.vue";
 import ErrorComponent from "./Components/ErrorComponent.vue";
 import FileComponent from "./Components/FileComponent.vue";
-import HeadingComponent from "./Components/HeadingComponent.vue";
 import InfoComponent from "./Components/InfoComponent.vue";
 import InputComponent from "./Components/InputComponent.vue";
 import LabelComponent from "./Components/LabelComponent.vue";
@@ -188,37 +189,35 @@ const updated_at = computed(() => {
     <Head title="My Profile" />
 
     <MainLayout>
-        <section class="max-w-screen-2xl mx-auto px-5 py-20">
-            <HeadingComponent class="text-center" text="My Profile" />
+        <ContentHeaderComponent text="My Profile" />
 
+        <ContentContainerComponent>
             <InfoComponent>
-                <ul class="list-disc list-inside">
-                    <li>
-                        Student Number should only be numbers with a dash (-).
-                        Refer to your School ID.
-                    </li>
+                <li>
+                    Student Number should only be numbers with a dash (-). Refer
+                    to your School ID.
+                </li>
 
-                    <li class="mt-3 md:mt-0">
-                        Name shouldn't have any numbers or special characters
-                        excluding <b>dot (.)</b>, <b>comma (,)</b>,
-                        <b>dash (-)</b>, and <b>apostrophe (')</b>.
-                    </li>
+                <li class="mt-3 md:mt-0">
+                    Name shouldn't have any numbers or special characters
+                    excluding <b>dot (.)</b>, <b>comma (,)</b>, <b>dash (-)</b>,
+                    and <b>apostrophe (')</b>.
+                </li>
 
-                    <li class="mt-3 md:mt-0">
-                        Age should be atleast 16 years old and above.
-                    </li>
+                <li class="mt-3 md:mt-0">
+                    Age should be atleast 16 years old and above.
+                </li>
 
-                    <li class="mt-3 md:mt-0">
-                        Recommended to use your face for the image.
-                    </li>
+                <li class="mt-3 md:mt-0">
+                    Recommended to use your face for the image.
+                </li>
 
-                    <li class="mt-3 md:mt-0">Image maximum size is 512kb.</li>
+                <li class="mt-3 md:mt-0">Image maximum size is 512kb.</li>
 
-                    <li class="mt-3 md:mt-0">
-                        Acceptable image formats are <b>.jpg</b>, <b>.jpeg</b>,
-                        and <b>.png</b>.
-                    </li>
-                </ul>
+                <li class="mt-3 md:mt-0">
+                    Acceptable image formats are <b>.jpg</b>, <b>.jpeg</b>, and
+                    <b>.png</b>.
+                </li>
 
                 <div
                     class="bg-slate-800 grid grid-cols-2 mt-5 px-5 py-3 rounded-md"
@@ -237,7 +236,7 @@ const updated_at = computed(() => {
             </div>
 
             <Form
-                :action="route('profile')"
+                :action="route('student')"
                 :options="{
                     preserveScroll: true,
                 }"
@@ -324,6 +323,6 @@ const updated_at = computed(() => {
                     v-if="page.flash.success"
                 />
             </Form>
-        </section>
+        </ContentContainerComponent>
     </MainLayout>
 </template>

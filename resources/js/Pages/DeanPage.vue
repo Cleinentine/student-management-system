@@ -5,6 +5,7 @@ import { Form, usePage } from "@inertiajs/vue3";
 
 import ButtonComponent from "./Components/ButtonComponent.vue";
 import ContentHeaderComponent from "./Components/ContentHeaderComponent.vue";
+import ContentContainerComponent from "./Components/ContentContainerComponent.vue";
 import ErrorComponent from "./Components/ErrorComponent.vue";
 import FileComponent from "./Components/FileComponent.vue";
 import InputComponent from "./Components/InputComponent.vue";
@@ -65,12 +66,12 @@ function handleImagePreview(event) {
 </script>
 
 <template>
-    <Head title="Dean Profile" />
+    <Head title="Dean" />
 
     <MainLayout>
         <ContentHeaderComponent text="My Profile" />
 
-        <section class="max-w-screen-2xl mx-auto px-5 py-20">
+        <ContentContainerComponent>
             <div class="my-10 text-center" v-if="imagePreview">
                 <img
                     :src="imagePreview"
@@ -87,58 +88,66 @@ function handleImagePreview(event) {
                 disableWhileProcessing
                 method="post"
             >
-                <div>
-                    <LabelComponent text="Avatar" towards="avatar" />
+                <div class="gap-5 grid lg:grid-cols-3">
+                    <div>
+                        <LabelComponent text="Avatar" towards="avatar" />
 
-                    <FileComponent
-                        @change="handleImagePreview"
-                        id="avatar"
-                        name="avatar"
-                    />
+                        <FileComponent
+                            @change="handleImagePreview"
+                            id="avatar"
+                            name="avatar"
+                        />
 
-                    <ErrorComponent
-                        :message="errors.avatar"
-                        v-if="errors.avatar"
-                    />
-                </div>
+                        <ErrorComponent
+                            :message="errors.avatar"
+                            v-if="errors.avatar"
+                        />
+                    </div>
 
-                <div class="mt-5">
-                    <LabelComponent text="Name" towards="name" />
+                    <div>
+                        <LabelComponent text="Name (Required)" towards="name" />
 
-                    <InputComponent
-                        :value="page.props.dean ? page.props.dean.name : ''"
-                        icon="fa-tag"
-                        name="name"
-                        placeholder="e.g. John Doe"
-                        type="text"
-                    />
+                        <InputComponent
+                            :value="page.props.dean ? page.props.dean.name : ''"
+                            icon="fa-tag"
+                            name="name"
+                            placeholder="e.g. John Doe"
+                            type="text"
+                        />
 
-                    <ErrorComponent :message="errors.name" v-if="errors.name" />
-                </div>
+                        <ErrorComponent
+                            :message="errors.name"
+                            v-if="errors.name"
+                        />
+                    </div>
 
-                <div class="mt-5">
-                    <LabelComponent text="College" towards="college" />
+                    <div>
+                        <LabelComponent
+                            text="College (Required)"
+                            towards="college"
+                        />
 
-                    <SelectComponent
-                        icon="fa-building-columns"
-                        name="college_id"
-                        v-model="selectModel.id"
-                    >
-                        <option value="">-- Select --</option>
-
-                        <option
-                            :key="option.id"
-                            :value="option.id"
-                            v-for="option in page.props.colleges"
+                        <SelectComponent
+                            icon="fa-building-columns"
+                            name="college_id"
+                            v-model="selectModel.id"
                         >
-                            {{ option.name }}
-                        </option>
-                    </SelectComponent>
+                            <option value="">-- Select --</option>
 
-                    <ErrorComponent
-                        :message="errors.college_id"
-                        v-if="errors.college_id"
-                    />
+                            <option
+                                :key="option.id"
+                                :value="option.id"
+                                v-for="option in page.props.colleges"
+                            >
+                                {{ option.name }}
+                            </option>
+                        </SelectComponent>
+
+                        <ErrorComponent
+                            :message="errors.college_id"
+                            v-if="errors.college_id"
+                        />
+                    </div>
                 </div>
 
                 <ButtonComponent
@@ -152,6 +161,6 @@ function handleImagePreview(event) {
                     v-if="page.flash.success"
                 />
             </Form>
-        </section>
+        </ContentContainerComponent>
     </MainLayout>
 </template>

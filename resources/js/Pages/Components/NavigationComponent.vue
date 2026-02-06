@@ -36,7 +36,7 @@ const mainLinks = [
 const authLinks = [
     {
         name: "My Profile",
-        route: "profile",
+        route: "student",
     },
     {
         name: "My Schedule",
@@ -67,7 +67,7 @@ const guestLinks = [
     },
     {
         name: "Forgot Password",
-        route: "home",
+        route: "password.request",
     },
 ];
 
